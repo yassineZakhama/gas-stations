@@ -1,6 +1,10 @@
 # Usage
 
 ```sh
+$ git clone https://github.com/yassineZakhama/gas-stations.git
+
+$ cd gas-stations
+
 $ npm install --legacy--peer-deps
 
 $ npm start 
