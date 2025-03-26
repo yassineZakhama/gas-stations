@@ -3,7 +3,7 @@ import { Typography, TextField, FormControlLabel, Switch } from "@mui/material";
 import styled from "styled-components";
 
 import { GasStationsTable } from "./gasStations/GasStationsTable";
-import { gasStations } from "./gasStations/GasStation";
+import { gasStationRepo } from "./gasStations/GasStation";
 
 export function MainView(): JSX.Element {
 	const [sorted, setSorted] = React.useState<boolean>(false);
@@ -21,7 +21,7 @@ export function MainView(): JSX.Element {
 				</div>
 				<Typography variant="h4" alignSelf={"center"}>Gas Stations</Typography>
 			</AppBar>
-			<GasStationsTable gasStations={sorted ? gasStations.getSorted() : gasStations.get()} query={query} />
+			<GasStationsTable gasStations={sorted ? gasStationRepo.getSorted() : gasStationRepo.get()} query={query} />
 		</>
 	);
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { GasStation, gasStations } from "./GasStation";
+import { GasStation, gasStationRepo } from "./GasStation";
 
 export async function fetchAndSetGasStations(setAppBusy: React.Dispatch<React.SetStateAction<boolean>>) {
 	const API_URL =
@@ -13,7 +13,7 @@ export async function fetchAndSetGasStations(setAppBusy: React.Dispatch<React.Se
 		}
 
 		const result = await response.json();
-		gasStations.initialize(parseGasStations(result.features));
+		gasStationRepo.initialize(parseGasStations(result.features));
 		setAppBusy(false);
 	} catch (err) {
 		console.error(err);

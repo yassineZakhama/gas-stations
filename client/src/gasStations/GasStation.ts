@@ -1,19 +1,19 @@
 type Address = {
-	street: string;
-	zipcode: number;
-	city: string;
+	readonly street: string;
+	readonly zipcode: number;
+	readonly city: string;
 };
 
 export type GasStation = {
-	id: number;
-	address: Address;
-	coordinates: {
-		x: number;
-		y: number;
+	readonly id: number;
+	readonly address: Address;
+	readonly coordinates: {
+		readonly x: number;
+		readonly y: number;
 	};
 };
 
-class GasStations {
+class GasStationRepo {
 	private gasStations: GasStation[];
 	private sortedGasStations: GasStation[];
 
@@ -36,4 +36,4 @@ class GasStations {
 	}
 }
 
-export const gasStations = new GasStations();
+export const gasStationRepo = new GasStationRepo();
